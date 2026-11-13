@@ -60,6 +60,7 @@ Le selector permet au Service de trouver les pods auxquels il doit envoyer le tr
 Le pod devait passer en ErrImagePull, puis en ImagePullBackOff, car l'image nginx:9.99 est introuvable.
 
 11. Pendant la panne, le site restait-il accessible ? Pourquoi ?
+
 Oui, le site restait accessible car les anciens pods fonctionnaient toujours
 
 ## Exercice 6 — Portainer & Mario
