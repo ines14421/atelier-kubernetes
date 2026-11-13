@@ -10,30 +10,36 @@
 ## Exercice 1 — Cluster
 
 1. Combien de nœuds affiche `kubectl get nodes` ? Quel est le rôle de chacun ?
-   >
+   >la commande affiche 3 noeuds:
+k3d-lab-server-0 : c'est le nœud manager. Il gère le cluster Kubernetes et coordonne les différents nœuds.
+k3d-lab-agent-0 : c'est un nœud Worker (agent). Il exécute les applications et les conteneurs.
+k3d-lab-agent-1 : c'est un nœud Worker (agent). Il exécute les applications et les conteneurs.
 2. Que montre `docker ps` ? Qu'est-ce qu'un « nœud » dans k3d, concrètement ?
-   >
+La commande docker ps affiche les 4 conteneurs Docker utilisés par notre cluster
+Un nœud est un conteneur Docker
 
 ## Exercice 2 — Premier déploiement
 
 3. Quels objets Kubernetes ont été créés par `kubectl create deployment` ? (indice : `kubectl get all`)
-   >
+Deployment : gère le déploiement de l'application.
+ReplicaSet : veille à maintenir le nombre de pods souhaité.
+Pod : contient le conteneur Nginx qui exécute l'application.
 4. Vous avez supprimé le pod `web-...` : que s'est-il passé, et pourquoi ?
-   >
+un pod a été recrée automatiquement.
 
 ## Exercice 3 — Modifier un conteneur en direct
 
 5. Après suppression du pod, votre message « Bienvenue... » a-t-il survécu ? Pourquoi ?
-   >
+Non, le message n'a pas survécu, car il était enregistré uniquement dans le conteneur supprimé.
 6. Pourquoi le `port-forward` a-t-il cessé de fonctionner après la suppression du pod ?
-   >
+Le port-forward a cessé de fonctionner car il était connecté à l'ancien pod, qui a été supprimé.
 
 ## Exercice 4 — Déclaratif
 
 7. Quelle différence entre `kubectl create` et `kubectl apply` ?
-   >
+"kubectl create" crée un objet Kubernetes alors que "kubectl apply" crée ou met à jour un objet à partir d'un fichier YAML.
 8. À quoi sert le `selector` d'un Service ? Que se passe-t-il s'il ne correspond à aucun pod ?
-   >
+Le selector permet au Service de trouver les pods auxquels il doit envoyer le trafic. S'il ne correspond à aucun pod, le Service ne peut envoyer le trafic à aucune application.
 
 ## Exercice 5 — Scaling & mises à jour
 
