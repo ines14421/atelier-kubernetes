@@ -65,9 +65,9 @@ Oui, le site restait accessible car les anciens pods fonctionnaient toujours
 ## Exercice 6 — Portainer & Mario
 
 12. URL publique de votre Mario :
-    >
+https://literate-space-tribble-q7577pw4rjp7hx65g-8585.app.github.dev/
 13. Retrouvez le Deployment `mario` en ligne de commande. Portainer et `kubectl` parlent-ils au même composant ? Lequel ?
-    >
+Oui, Portainer et kubectl parlent avec le même composant : l'API Server de Kubernetes.
 
 ## Bonus (facultatif)
 
