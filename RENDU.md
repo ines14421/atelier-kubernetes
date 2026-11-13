@@ -53,7 +53,8 @@ Le selector permet au Service de trouver les pods auxquels il doit envoyer le tr
       NAME                    READY   STATUS    RESTARTS   AGE   IP          NODE
       site-5cc664db9c-ptqmg   1/1     Running   0          99s   10.42.0.6   k3d-lab-agent-0
       site-5cc664db9c-t5k4x   1/1     Running   0          93s   10.42.2.7   k3d-lab-agent-1
-      site-5cc664db9c-tcttf   1/1     Running   0          85s   10.42.1.8   k3d-lab-server-0```
+      site-5cc664db9c-tcttf   1/1     Running   0          85s   10.42.1.8   k3d-lab-server-0
+```
 
 10. Avec l'image `nginx:9.99`, quel statut avait le pod ? Quelle commande vous a donné la cause ?
 Le pod devait passer en ErrImagePull, puis en ImagePullBackOff, car l'image nginx:9.99 est introuvable.
